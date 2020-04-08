@@ -35,14 +35,23 @@ public class TransitCalculator {
 
         //calculate how much each ride would cost
         cost = cost / totalRides;
-        System.out.println(cost);
+       
         return cost;
     }
+    public double[] getRidesPrices () {
+        double[] ridesCost = { totalRides * prices[0], unlimited7Price(), prices[2]};
+        //this value will only show location of where the data is stored
+        return ridesCost;
+    }
+
     public static void main(String[] args) {
         System.out.println("This is my first test");
 
-        TransitCalculator jake =  new TransitCalculator(19 , 20);
+        TransitCalculator jake =  new TransitCalculator(22 , 50);
 
-        jake.unlimited7Price();
+        System.out.println(jake.unlimited7Price());
+
+        //Wrapping our method in Arrays.toString() would allow us to see the values in the array
+        System.out.println(jake.getRidesPrices());
     }
 }
