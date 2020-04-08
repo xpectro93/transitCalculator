@@ -29,6 +29,7 @@ public class TransitCalculator {
 
         if(passes % 7 > 0){
             passes += 1;
+            System.out.println(passes);
         }
         
         //how much to buy
