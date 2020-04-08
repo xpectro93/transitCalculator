@@ -1,8 +1,5 @@
-import java.util.Arrays;
 /* 
-Pay-per-ride (single ride): $2.75
-7-day Unlimited Rides: $33.00
-30-day Unlimited Rides: $127.00
+PThis app will tell the use which metrocard will give them the best value
 
 
 */
@@ -59,7 +56,6 @@ public class TransitCalculator {
     }
 
     public static void main(final String[] args) {
-        System.out.println("This is my first test");
 
         final TransitCalculator jake = new TransitCalculator(22, 50);
 
