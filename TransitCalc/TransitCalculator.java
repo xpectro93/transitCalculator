@@ -56,7 +56,7 @@ public class TransitCalculator {
                 lowest = i;
             }
         }
-        return "You should choose the "+ cardName[lowest] + " at "+getRidesPrices()[lowest] / totalRides + " per ridarino.";
+        return "You should choose the "+ cardName[lowest] + " at "+getRidesPrices()[lowest] + " per ridarino.";
     }
 
     public static void main(String[] args) {
