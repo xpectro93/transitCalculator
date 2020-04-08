@@ -1,3 +1,4 @@
+import java.util.Scanner;
 /* 
 PThis app will tell the use which metrocard will give them the best value
 */
@@ -55,13 +56,26 @@ public class TransitCalculator {
 
     public static void main(final String[] args) {
 
-        final TransitCalculator jake = new TransitCalculator(22, 50);
+        
 
-        System.out.println(jake.unlimited7Price());
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        System.out.println("How many days are you planning on using the MTA?");
+        
+
+        //Gets response from user
+        int days = myObj.nextInt();  // Read user input
+        System.out.println("How many times are you expecting to use the MTA during that time?");  // Output user input
+
+
+        int times = myObj.nextInt();
+        final TransitCalculator jake = new TransitCalculator(days, times);
 
         //Wrapping our method in Arrays.toString() would allow us to see the values in the array
         // System.out.println(jake.getRidesPrices());
         System.out.println(jake.getBestFare());
+
+        //close scanner;
+        myObj.close();
 
     }
 }
