@@ -13,6 +13,7 @@ public class TransitCalculator {
 
     //By index singleRide, Week, monthly
     double prices[] = {2.75, 33, 127};
+    String cardName[] = {"One and Done", "Weekly Relief", "Raking in The monthly Benefits package"};
     //this should be like a JavaScript Object
     // constructor
     public TransitCalculator (int days, int rides){
@@ -39,9 +40,22 @@ public class TransitCalculator {
         return cost;
     }
     public double[] getRidesPrices () {
-        double[] ridesCost = { totalRides * prices[0], unlimited7Price(), prices[2]};
+        double maxSingleRide = totalRides * prices[0];
+        double maxMonthRide = prices[2];
+        double[] ridesCost = { maxSingleRide, unlimited7Price(), maxMonthRide};
         //this value will only show location of where the data is stored
         return ridesCost;
+    }
+
+    public String getBestFare () {
+        int lowest = 0;
+        for(int i = 0; i < prices.length; i++){
+            // System.out.print(prices[i]);
+            if(getRidesPrices()[i] < getRidesPrices()[lowest]){
+                lowest = i;
+            }
+        }
+        return "You should choose the "+ cardName[lowest] + " at "+getRidesPrices()[lowest] / totalRides + " per ridarino.";
     }
 
     public static void main(String[] args) {
@@ -52,6 +66,8 @@ public class TransitCalculator {
         System.out.println(jake.unlimited7Price());
 
         //Wrapping our method in Arrays.toString() would allow us to see the values in the array
-        System.out.println(jake.getRidesPrices());
+        // System.out.println(jake.getRidesPrices());
+        System.out.println(jake.getBestFare());
+
     }
 }
